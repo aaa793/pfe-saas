@@ -283,3 +283,14 @@ model AgentMemory {
 
   @@unique([userId, key])
 }
+
+
+model TelegramConversation {
+  id        String   @id @default(cuid())
+  chatId    String
+  userId    String
+  username  String
+  question  String
+  answer    String
+  createdAt DateTime @default(now())
+}
